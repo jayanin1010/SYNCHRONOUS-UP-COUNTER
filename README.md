@@ -1,3 +1,7 @@
+Developed by: JAYANI N
+RegisterNumber: 212224100025
+
+
 ### SYNCHRONOUS-UP-COUNTER
 
 **AIM:**
@@ -28,19 +32,42 @@ However, the remaining flip-flops should be made ready to toggle only when all l
 
 **Procedure**
 
-/* write all the steps invloved */
+1. Create a new project and name it.
+2. Go to file, choose new file and click on the verilog HDL file.
+3. Now have the program for 4-bit synchronous up counter and compile and run it.
+4. Next, generate the RTL diagram for that go to Netlist viewers and select RTL diagram.
+5. For the waveform/timing diagram insert the nodes and give the inputs for clock and reset and run it.
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. 
+      module sync_up_counter (
+          input clk,
+          input reset,
+          output reg [3:0] count
+      );
+      
+      always @(posedge clk or posedge reset) begin
+          if (reset)
+              count <= 4'b0000;
+          else
+              count <= count + 1;
+      end
+      
+      endmodule
 
-Developed by: RegisterNumber:
-*/
 
 **RTL LOGIC UP COUNTER**
+![Screenshot 2025-05-06 100140](https://github.com/user-attachments/assets/11dbbc34-1a43-4703-9d76-8a050b2ae5c6)
+
 
 **TIMING DIAGRAM FOR IP COUNTER**
+![Screenshot 2025-05-06 101725](https://github.com/user-attachments/assets/d5ed4d48-af0b-4443-931f-9e5d2f52bb47)
+
 
 **TRUTH TABLE**
 
+![image](https://github.com/user-attachments/assets/33fe9063-b902-4983-a0dd-280db8f4cb51)
+
+
 **RESULTS**
+Thus the simulation, logic diagram and waveform has been verified for syncronous up-counter using quartus.
